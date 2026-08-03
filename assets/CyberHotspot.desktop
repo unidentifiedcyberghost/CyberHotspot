@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=CyberHotspot
+Exec=cyberhotspot-gui
+Icon=network-wireless
+Categories=Network;
+Terminal=false
