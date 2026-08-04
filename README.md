@@ -61,6 +61,10 @@ cyberhotspot status
 If Hosted Network is unsupported, Windows Mobile Hotspot may still be available through Windows Settings. CyberHotspot reports this separately because the modern Mobile Hotspot API is not the same interface as legacy `netsh`.
 
 
+
+
+<img width="1912" height="2658" alt="terminallllll lookslikes" src="https://github.com/user-attachments/assets/359bee2e-b54d-4a36-9b70-97ccd85142e1" />
+
 ## Linux
 
 ```bash
