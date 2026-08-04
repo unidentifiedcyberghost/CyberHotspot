@@ -1,8 +1,13 @@
+<img width="1918" height="1078" alt="observability" src="https://github.com/user-attachments/assets/cf08fdd0-872e-410b-8f55-bf492bc654c1" />
 <img width="815" height="170" alt="ascii-art-text" src="https://github.com/user-attachments/assets/a13979eb-fc13-46bd-841b-a7c30a62689f" />
 <img width="1362" height="770" alt="CyberHotspot-v2 7 0-Compact-HUD-Live-Clients = stable na din" src="https://github.com/user-attachments/assets/14ac14ff-b8a1-4c0a-b76b-115462524f45" />
 
+
+<img width="1371" height="770" alt="CyberHotspot-v2 8 0-Local-Observability-HUD installing python" src="https://github.com/user-attachments/assets/322a4881-9d89-475d-a39c-cd1035713576" />
+
 <img width="1462" height="776" alt="sampe tree" src="https://github.com/user-attachments/assets/5922cb91-1405-486f-8ebf-c27d0ff1831d" />
 
+<img width="1918" height="1078" alt="observability" src="https://github.com/user-attachments/assets/51557f93-6189-459f-9357-1d0482423407" />
 
 
 # CyberHotspot
