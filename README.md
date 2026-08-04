@@ -1,9 +1,13 @@
 <img width="815" height="170" alt="ascii-art-text" src="https://github.com/user-attachments/assets/a13979eb-fc13-46bd-841b-a7c30a62689f" />
 <img width="1362" height="770" alt="CyberHotspot-v2 7 0-Compact-HUD-Live-Clients = stable na din" src="https://github.com/user-attachments/assets/14ac14ff-b8a1-4c0a-b76b-115462524f45" />
 
+<img width="1462" height="776" alt="sampe tree" src="https://github.com/user-attachments/assets/5922cb91-1405-486f-8ebf-c27d0ff1831d" />
+
+
+
 # CyberHotspot
 
-**CyberHotspot v2.7.0 — Compact Cross-Platform HUD Control**
+**CyberHotspot v2.7.0 — Compact Cross-Platform**
 
 A practical Wi-Fi hotspot manager with a PyQt5 futuristic HUD, terminal CLI, Linux NetworkManager backend, and Windows Mobile Hotspot / Tethering backend.
 
