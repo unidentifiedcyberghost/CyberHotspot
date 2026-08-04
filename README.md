@@ -1,3 +1,6 @@
+<img width="815" height="170" alt="ascii-art-text" src="https://github.com/user-attachments/assets/a13979eb-fc13-46bd-841b-a7c30a62689f" />
+
+
 # CyberHotspot
 
 A powerful, modern Wi‑Fi hotspot tool for Linux — Terminal + PyQt5 GUI — Python + Bash.
@@ -7,6 +10,9 @@ Run the colorful terminal banner:
 - or python3 banner_print.py (best cross-platform)
 
 Version: 0.1.0
+
+
+<img width="1362" height="770" alt="CyberHotspot-v2 7 0-Compact-HUD-Live-Clients = stable na din" src="https://github.com/user-attachments/assets/14ac14ff-b8a1-4c0a-b76b-115462524f45" />
 
 Summary
 - Create and manage Wi‑Fi hotspots from a laptop or VM.
