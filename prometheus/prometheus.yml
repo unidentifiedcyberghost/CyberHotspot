@@ -1,0 +1,10 @@
+# Optional local Prometheus configuration for CyberHotspot.
+# CyberHotspot itself already exposes a loopback-only /metrics endpoint.
+global:
+  scrape_interval: 2s
+  evaluation_interval: 2s
+
+scrape_configs:
+  - job_name: cyberhotspot
+    static_configs:
+      - targets: ["127.0.0.1:9464"]
