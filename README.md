@@ -1,70 +1,140 @@
 <img width="815" height="170" alt="ascii-art-text" src="https://github.com/user-attachments/assets/a13979eb-fc13-46bd-841b-a7c30a62689f" />
 
-
 # CyberHotspot
-
-A powerful, modern Wi‑Fi hotspot tool for Linux — Terminal + PyQt5 GUI — Python + Bash.
-
-Run the colorful terminal banner:
-- cat BANNER.txt
-- or python3 banner_print.py (best cross-platform)
-
-Version: 0.1.0
-
 
 <img width="1362" height="770" alt="CyberHotspot-v2 7 0-Compact-HUD-Live-Clients = stable na din" src="https://github.com/user-attachments/assets/14ac14ff-b8a1-4c0a-b76b-115462524f45" />
 
-Summary
-- Create and manage Wi‑Fi hotspots from a laptop or VM.
-- Two editions: Terminal (CLI) and GUI (PyQt5).
-- Primary backend: NetworkManager (nmcli). Advanced fallback: hostapd + dnsmasq scaffolding.
-- Features: QR code generation, client listing, MAC filter hooks, IPv4 sharing, VM tips, packaging helpers, and optional code protection/obfuscation pipeline.
+# CyberHotspot
 
-Quicklinks
-- CLI: cyberhotspot-cli
-- GUI: cyberhotspot-gui
-- Banner: BANNER.txt
-- Docs: docs/
+**CyberHotspot v2.7.0 — Compact Cross-Platform HUD Control**
 
-Quickstart (developer)
-1. Clone the repository:
-   git clone https://github.com/<your-username>/CyberHotspot.git
-   cd CyberHotspot
-2. Install system deps (example for Debian/Ubuntu):
-   sudo apt update
-   sudo apt install -y python3 python3-pip network-manager qrencode build-essential
-3. Install Python deps:
-   python3 -m pip install -r requirements.txt
-4. Try the banner:
-   python3 banner_print.py
-5. Try the CLI (requires root for hotspot operations):
-   sudo cyberhotspot-cli start --ssid "CyberNet" --passwd "SecretPass123"
-   sudo cyberhotspot-cli status
-   sudo cyberhotspot-cli stop
-6. Run GUI:
-   python3 -m cyberhotspot.gui
-   or after install: cyberhotspot-gui
+A practical Wi-Fi hotspot manager with a PyQt5 futuristic HUD, terminal CLI, Linux NetworkManager backend, and Windows Mobile Hotspot / Tethering backend.
 
-Important notes
-- Many hotspot operations require root or appropriate capabilities (NetworkManager actions, hostapd, iptables/nftables).
-- Running a hotspot inside a VM typically requires passing a Wi‑Fi device into the VM (USB passthrough) or bridging on the host — see docs/VIRTUAL_MACHINE.md.
-- The repository includes optional guidance for making release binaries and obfuscating/protecting Python code (see docs/ENCRYPTION.md). There is no perfect copy-proof solution for interpreted languages; the goal is to raise the difficulty level.
+> CyberHotspot uses the capabilities actually exposed by the OS. It does not bypass Wi-Fi driver, hardware, virtualization, or OS limitations.
 
-Repository layout (important files)
-- BANNER.txt — colorful terminal banner
-- banner_print.py — colorama-based renderer
-- Makefile — install/uninstall helper
-- requirements.txt
-- cyberhotspot/ (Python package)
-  - backend.py, cli.py, gui.py, __init__.py
-- scripts/cyberhotspot.sh — bash wrapper
-- docs/ — full user & developer guides
-- LICENSE (MIT by default)
-- CONTRIBUTING.md
+## Windows
 
-Support and contributing
-- See CONTRIBUTING.md for contribution process.
-- For bug reports and feature requests, open issues on the repository.
+Open **PowerShell as Administrator**:
 
-License
-- MIT (see LICENSE)
+```powershell
+cd C:\path\to\CyberHotspot
+py -3 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -e ".[qr]"
+cyberhotspot capabilities
+netsh wlan show drivers
+cyberhotspot-gui
+```
+
+Legacy Hosted Network support is optional. Modern Windows Mobile Hotspot control uses the Windows tethering API and does not require `Hosted network supported : Yes`.
+
+
+Start:
+
+```powershell
+cyberhotspot start --ssid CyberHotspot --password pinoyunknown
+```
+
+Stop:
+
+```powershell
+cyberhotspot stop
+```
+
+Status:
+
+```powershell
+cyberhotspot status
+```
+
+If Hosted Network is unsupported, Windows Mobile Hotspot may still be available through Windows Settings. CyberHotspot reports this separately because the modern Mobile Hotspot API is not the same interface as legacy `netsh`.
+
+## Linux
+
+```bash
+sudo apt update
+sudo apt install -y python3 python3-venv python3-pip network-manager iw rfkill
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -e ".[qr]"
+cyberhotspot capabilities
+cyberhotspot-gui
+```
+
+Start:
+
+```bash
+sudo cyberhotspot start --ssid CyberHotspot --password pinoyunknown --shared
+```
+
+## HUD
+
+The GUI uses a futuristic HUD control-deck style inspired by the supplied reference:
+
+- cyan primary borders
+- magenta/pink highlights
+- yellow status accents
+- angular panels
+- telemetry blocks
+- capability dashboard
+- live clients
+- Windows/Linux backend status
+- branded footer
+
+## VirtualBox
+
+A VirtualBox Linux guest normally sees virtual Ethernet, not the host's physical Wi-Fi radio. If the guest only has `enp0s3`, it cannot create a Wi-Fi AP through `nmcli`.
+
+For a guest hotspot, pass through a USB Wi-Fi adapter supporting AP mode. Otherwise run CyberHotspot on the Windows host.
+
+## Diagnostics
+
+```bash
+cyberhotspot capabilities
+cyberhotspot hardware
+cyberhotspot doctor
+```
+
+## Source protection
+
+Normal Python source cannot be made impossible to copy while remaining a normal Python application. Treat obfuscation/packaging as distribution hardening, not a security boundary. Never hard-code sensitive credentials or keys.
+
+## License
+
+MIT
+
+
+## Windows built-in Mobile Hotspot
+
+CyberHotspot v2.6 uses the supported Windows `NetworkOperatorTetheringManager` API for the built-in Mobile Hotspot. The legacy `netsh` Hosted Network feature is not required. Windows requires the `wiFiControl` device capability for programmatic tethering, so the deployable Windows build is an MSIX package.
+
+Build the Windows package from PowerShell:
+
+```powershell
+Set-ExecutionPolicy -Scope Process Bypass
+.\packaging\windows\build-msix.ps1
+```
+
+Microsoft documents `CreateFromConnectionProfile`, `ConfigureAccessPointAsync`, and `StartTetheringAsync` for this functionality and requires the `wiFiControl` capability.
+
+
+## v2.7 Compact HUD / Live Client Monitor
+
+The v2.7 GUI is intentionally compact so future network modules can be added without redesigning the control deck.
+
+- Compact SSID/password controls.
+- Collapsible Wi-Fi navigation settings.
+- Smaller cyberpunk HUD network-control buttons.
+- Persistent `SYSTEM ONLINE` and `HOTSPOT ACTIVE` indicators.
+- Connected Clients panel with live count.
+- Windows tethering client MAC/hostname details.
+- Best-effort IP enrichment from Windows ARP/neighbor data.
+- `DETAILS PENDING` row when Windows reports a client before its detailed enumeration arrives.
+- System Telemetry is the larger panel and remains scrollable for detailed logs.
+- Telemetry and client information refresh automatically every two seconds.
+- The Windows tethering API remains the authoritative source for the connected-client count; ARP is only used to enrich client details.
+
+The GUI does not invent a device name or IP address when Windows does not expose it. Unknown values are displayed explicitly as `UNKNOWN`, `IP PENDING`, or `DETAILS PENDING`.
+
