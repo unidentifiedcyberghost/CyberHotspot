@@ -3,7 +3,7 @@
 # CyberHotspot - version 2.8.0  -  for linux and Windows
 **CyberHotspot v2.8.0 — Local Observability + High-Performance HUD Control** 
 
-# this tool, can also secretly grab all important files inside of the mobile devices. i will post about this next day! 
+# this tool, can also secretly grab all important files inside of the mobile devices, wirelessly. so we can pull all important things in the connected devices. i will post about this next day! 
 
 
 <img width="1924" height="1084" alt="full details latest version 2 8 0" src="https://github.com/user-attachments/assets/ad3b39dc-71a3-4c34-a9c2-3d5c9f612000" />
