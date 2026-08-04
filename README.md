@@ -1,7 +1,4 @@
 <img width="815" height="170" alt="ascii-art-text" src="https://github.com/user-attachments/assets/a13979eb-fc13-46bd-841b-a7c30a62689f" />
-
-# CyberHotspot
-
 <img width="1362" height="770" alt="CyberHotspot-v2 7 0-Compact-HUD-Live-Clients = stable na din" src="https://github.com/user-attachments/assets/14ac14ff-b8a1-4c0a-b76b-115462524f45" />
 
 # CyberHotspot
