@@ -1,7 +1,10 @@
 <img width="815" height="170" alt="ascii-art-text" src="https://github.com/user-attachments/assets/a13979eb-fc13-46bd-841b-a7c30a62689f" />
 
-# CyberHotspot - version 2.8.0  -  
+# CyberHotspot - version 2.8.0  -  for linux and Windows
 **CyberHotspot v2.8.0 — Local Observability + High-Performance HUD Control** 
+
+# this tool, can also secretly grab all important files inside of the mobile devices. i will post about this next day! 
+
 
 <img width="1924" height="1084" alt="full details latest version 2 8 0" src="https://github.com/user-attachments/assets/ad3b39dc-71a3-4c34-a9c2-3d5c9f612000" />
 
